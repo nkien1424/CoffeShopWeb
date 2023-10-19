@@ -307,9 +307,7 @@ footer .footer-get-email .footer-email i{
     font-size: 15px;
     color: black;
 }
-.menu-cafe li:hover a{
-    border-bottom: 1px solid black;
-}
+
 .menu-cafe li {
     display: inline-block;
     padding-left: 25px;
@@ -328,7 +326,7 @@ footer .footer-get-email .footer-email i{
     width: 100%;
 }
 
-#kien .menu-class-cafe button {
+button {
     margin-right: 20px;
     background-color: #F6F5F3;
     padding: 5px 10px;
@@ -337,7 +335,8 @@ footer .footer-get-email .footer-email i{
     cursor: pointer;
 }
 button:hover{
-    background-color: rgb(194, 183, 183);
+    background-color: black;
+    color: white;
 }
 #product{
     width: 100%;
@@ -354,13 +353,13 @@ button:hover{
 }
 #product article .product-img{
     width: 380px;
-    height: 350px;
+    height: 400x;
     overflow: hidden;
     border-radius: 10px;
 }
 #product article img{
     width: 380px;
-    height: 350px;
+    height: 400px;
     padding-bottom: 15px;
     transition: 0.5s;
 }
@@ -370,8 +369,7 @@ button:hover{
 .hide{
     display: none;
 }
-
-#kien .menu-class-cafe button.active{
+button.active{
     background-color: black;
     color: white;
 }
