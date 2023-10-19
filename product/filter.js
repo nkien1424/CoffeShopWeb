@@ -7,7 +7,7 @@ let count = {
 };
 
 document.querySelectorAll(".menu-class-cafe button").forEach((button) => {
-  let className = button.getAttribute("class");
+  let className = button.getAttribute("type");
   if (className == "all") {
     let countText = `<sup>${count[className]}</sup>`;
     button.innerHTML += countText;
@@ -29,9 +29,19 @@ img1List.forEach((item) => {
   });
 });
 
+
+
+function activeButton(btnActive) {
+  btnList.forEach((btn) => {
+    btn.classList.remove("active");
+  });
+  btnActive.classList.add("active");
+}
 btnList.forEach((btn) => {
   btn.addEventListener("click", (e) => {
-    let type = e.currentTarget.getAttribute("class");
+    activeButton(e.currentTarget);
+    let type = e.currentTarget.getAttribute("type");
+
     let filterData;
     if (type === "all") {
       filterData = arr;
@@ -41,36 +51,15 @@ btnList.forEach((btn) => {
     render(filterData);
   });
 });
-
 function render(list) {
-  document.querySelectorAll("article").forEach((article) => {
-    article.style.display = "none";
+  document.querySelectorAll('article').forEach(article => {
+      article.style.display = 'none';
   });
-  list.forEach((item) => {
-    let articles = document.querySelectorAll(`.${item.type}`);
-    articles.forEach((article) => {
-      article.style.display = "inline-block";
-    });
+  list.forEach(item => {
+      let articles = document.querySelectorAll(`.${item.type}`);
+      articles.forEach(article => {
+          article.style.display = 'inline-block';
+      });
   });
-}
+} 
 
-// function activeButton(btnActive) {
-//   btnList.forEach((btn) => {
-//     btn.classList.remove("active");
-//   });
-//   btnActive.classList.add("active");
-// }
-// btnList.forEach((btn) => {
-//   btn.addEventListener("click", (e) => {
-//     activeButton(e.currentTarget);
-//     let type = e.currentTarget.getAttribute("type");
-
-//     let filterData;
-//     if (type === "all") {
-//       filterData = arr;
-//     } else {
-//       filterData = arr.filter((food) => food.type === type);
-//     }
-//     render(filterData);
-//   });
-// });
