@@ -12,7 +12,7 @@ document.querySelectorAll(".menu-class-cafe button").forEach((button) => {
     let countText = `<sup>${count[className]}</sup>`;
     button.innerHTML += countText;
   } else {
-    let countText = `<sup>${count[className] - 1}</sup>`;
+    let countText = `<sup>${count[className]}</sup>`;
     button.innerHTML += countText;
   }
 });
